@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+# sudo not required for some system commands
+for x in mount umount sv pacman updatedb su ; do
+	alias $x="sudo $x"
+done
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	bc="bc -ql" \
+	mkd="mkdir -pv" \
+	yt="youtube-dl --add-metadata -i" \
+
+# Clean up home dir
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+
+# Colorize commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"\
+	ssh='TERM="xterm-256color" ssh'
+
+# These common commands are just too long! Abbreviate them.
+alias \
+	ka="killall" \
+	g="git" \
+	trem="transmission-remote" \
+	sdn="sudo shutdown -h now" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	p="sudo pacman" \
+	z="zathura"\
+	dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"\
+	shellfiles="/usr/bin/git --git-dir=$HOME/.shellfiles/ --work-tree=$HOME"\
+  hosts="sudo -e /etc/hosts"\
+
+# Update commands
+alias \
+	yd="yay -Syu" \
+	yg="yay -Syyu" \
+	ys="yay -Ss"
+
+alias \
+	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
+	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \
