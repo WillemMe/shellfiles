@@ -19,3 +19,6 @@ setopt HIST_IGNORE_SPACE       # [default] Don't record an entry starting with a
 setopt HIST_REDUCE_BLANKS      # Remove superfluous blanks before recording an entry.
 setopt HIST_SAVE_NO_DUPS       # Don't write duplicate entries in the history file.
 setopt SHARE_HISTORY           # Share history between all sessions.
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
