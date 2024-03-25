@@ -6,6 +6,7 @@ export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 #unsetopt PROMPT_SP
 
 # ~/ Clean-up:
+export XDG_CURRENT_DESKTOP=hyprland
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -36,15 +37,18 @@ export WEECHAT_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/weechat"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 export ELECTRUMDIR="${XDG_DATA_HOME:-$HOME/.local/share}/electrum"
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+export GOPATH="$XDG_DATA_HOME"/go
+
 
 #Firefox
 export MOZ_ENABLE_WAYLAND=1
-export GTK_USE_PORTAL=1
+#export GTK_USE_PORTAL=1
 
 #npm
 export prefix=${XDG_DATA_HOME}/npm
 export cache=${XDG_CACHE_HOME}/npm
-export init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
+#export init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
 
 
 
@@ -62,7 +66,7 @@ export LESS_TERMCAP_se="$(printf '%b' '[0m')"
 export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
-export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
+export QT_QPA_PLATFORMTHEME="qt6ct"	# Have QT use gtk2 theme.
 export AWT_TOOLKIT="MToolkit wmname LG3D"	#May have to install wmname
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -70,3 +74,5 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$HOME/.local/share/cargo/bin
+export NVM_DIR="$HOME/.config/nvm"
+

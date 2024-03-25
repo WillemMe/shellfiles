@@ -94,7 +94,6 @@ if [[ -n $SSH_CONNECTION ]]; then
 
 #Comp dump
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
-
 # alias
 . $ZDOTDIR/configs/aliasrc
 # Defaults
@@ -103,6 +102,31 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 . $ZDOTDIR/configs/functions.zsh
 # Shortcuts
 . $ZDOTDIR/configs/shortcuts.zsh
+
+#export PYENV_ROOT="$HOME/.pyenv"
+#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/home/willem/Storage/Code/conda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/home/willem/Storage/Code/conda/etc/profile.d/conda.sh" ]; then
+#        . "/home/willem/Storage/Code/conda/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/home/willem/Storage/Code/conda/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
+
+
+# Zoxide
+eval "$(zoxide init zsh --cmd cd)"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

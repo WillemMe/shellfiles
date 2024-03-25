@@ -43,8 +43,12 @@ alias \
 	dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"\
 	shellfiles="/usr/bin/git --git-dir=$HOME/.shellfiles/ --work-tree=$HOME"\
   hosts="sudo -e /etc/hosts"\
-  onx="env -u WAYLAND_DISPLAY"
-
+  onx="env -u WAYLAND_DISPLAY"\
+  ealias="vim $XDG_CONFIG_HOME/zsh/configs/aliasrc"\
+  dcu="docker-compose up -d"\
+  dcd="docker-compose down"\
+  vpsu="sudo wg-quick up wg3"\
+  vpsd="sudo wg-quick down wg3"
 # Update commands
 alias \
 	yd="yay -Syu" \
