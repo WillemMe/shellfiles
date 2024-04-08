@@ -45,10 +45,12 @@ alias \
   hosts="sudo -e /etc/hosts"\
   onx="env -u WAYLAND_DISPLAY"\
   ealias="vim $XDG_CONFIG_HOME/zsh/configs/aliasrc"\
-  dcu="docker-compose up -d"\
-  dcd="docker-compose down"\
+  dcu="docker compose up -d"\
+  dcd="docker compose down"\
   vpsu="sudo wg-quick up wg3"\
-  vpsd="sudo wg-quick down wg3"
+  vpsd="sudo wg-quick down wg3"\
+  jo="joshuto"\
+  venv="python -m venv .venv & source .venv/bin/activate"
 # Update commands
 alias \
 	yd="yay -Syu" \
